@@ -16,7 +16,7 @@ import {ExponentialStrengthPipe} from './exponential-strength.pipe';
                 <input type="text"  class="form-control" [(ngModel)]="factor">
             </div>
             <div class="from-group">
-                <label for="factor">Super Hero Power: </label>
+                <label for="factor">Super Hero Powerz: </label>
                 <input type="text" readonly="readonly" class="form-control" value="{{power | exponentialStrength: factor}}">
             </div>
         </form>

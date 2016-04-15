@@ -8,14 +8,19 @@ import {WikipediaService} from './wiki.service';
 @Component({
     selector: 'my-wiki-smart',
     template: `
-    <h1>Smarter Wikipedia Demo</h1>
-    <p><i>Fetches when typing stops</i></p>
-
-    <input #term (keyup)="search(term.value)"/>
-
-    <ul>
-      <li *ngFor="#item of items | async">{{item}}</li>
-    </ul>
+    <div class="container">
+        <h1>Smarter Wikipedia Demo</h1>
+        <form>
+        <div class="form-group">
+             <label>Fetches when typing stops</label>
+             <input class="form-control" #term (keyup)="search(term.value)"/>
+        
+            <ul>
+              <li *ngFor="#item of items | async">{{item}}</li>
+            </ul>
+        </div>
+        </form>
+    </div>
   `,
     providers:[JSONP_PROVIDERS, WikipediaService]
 })

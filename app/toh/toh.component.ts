@@ -7,6 +7,8 @@ import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import {HeroFormComponent} from './hero-form/hero-form.component'
 import {PowerBoostCalculator} from './power-boost-calculator.component'
+import {MissionControlComponent} from './mission/mission.component'
+import {HeroDynamicFormComponent} from './dynamic-form/hero-dynamic-form.component'
 import {CONFIG} from './toh.config'
 import {provide}           from 'angular2/core';
 import {XHRBackend}        from 'angular2/http';
@@ -23,6 +25,8 @@ import {HeroData}          from './../heroes-data';
       <a [routerLink]="['Heroes']">Heroes</a>
       <a [routerLink]="['HeroForm']">Hero Form</a>
       <a [routerLink]="['Pipes']">Pipes</a>
+      <a [routerLink]="['Mission']">Mission</a>
+      <a [routerLink]="['HeroDynamicForm']">Hero Dynamic Form</a>
     </nav>
     <router-outlet></router-outlet>
   `,
@@ -64,6 +68,16 @@ import {HeroData}          from './../heroes-data';
     path: '/pipes',
     name: 'Pipes',
     component: PowerBoostCalculator
+  },
+  {
+    path: '/mission',
+    name: 'Mission',
+    component: MissionControlComponent
+  },
+  {
+    path: '/hero_dymanic_form',
+    name: 'HeroDynamicForm',
+    component: HeroDynamicFormComponent
   }
 ])
 export class TohComponent {

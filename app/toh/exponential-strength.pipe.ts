@@ -15,3 +15,4 @@ export class ExponentialStrengthPipe implements PipeTransform {
         return Math.pow(value, isNaN(exp) ? 1 : exp);
     }
 }
+

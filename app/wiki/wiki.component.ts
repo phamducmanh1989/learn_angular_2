@@ -7,14 +7,23 @@ import {WikipediaService} from './wiki.service';
 @Component({
     selector: 'my-wiki',
     template: `
-    <h1>Wikipedia Demo</h1>
-    <p><i>Fetches after each keystroke</i></p>
+    <div class="container">
+        <h1>Wikipedia Demo</h1>
+        <form>
+            <div class="form-group">
+             <label>Fetches after each keystroke</label>
 
-    <input #term (keyup)="search(term.value)"/>
+            <input class="form-control"#term (keyup)="search(term.value)"/>
+            
+            <ul>
+              <li *ngFor="#item of items | async">{{item}}</li>
+            </ul>
+            </div>
+        </form>
+    </div>
     
-    <ul>
-      <li *ngFor="#item of items | async">{{item}}</li>
-    </ul>
+    
+   
   `,
     providers:[JSONP_PROVIDERS, WikipediaService]
 })
